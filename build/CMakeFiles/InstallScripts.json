@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/zijin/wheel_leg_control/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

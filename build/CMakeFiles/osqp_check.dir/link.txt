@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/osqp_check.dir/src/osqp_check.cpp.o -o osqp_check  -lpthread -losqp

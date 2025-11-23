@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmpc_solver.a CMakeFiles/mpc_solver.dir/src/mpc_solver.cpp.o
+/usr/bin/ranlib libmpc_solver.a

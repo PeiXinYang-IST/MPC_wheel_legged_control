@@ -1,0 +1,4 @@
+/home/zijin/wheel_leg_control/build/CMakeFiles/mpc_solver.dir
+/home/zijin/wheel_leg_control/build/CMakeFiles/main.dir
+/home/zijin/wheel_leg_control/build/CMakeFiles/edit_cache.dir
+/home/zijin/wheel_leg_control/build/CMakeFiles/rebuild_cache.dir
