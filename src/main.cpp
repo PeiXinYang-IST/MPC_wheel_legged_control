@@ -13,7 +13,7 @@ int main() {
     R(0, 0) = 25;  
     R(1, 1) = 10;   
 
-    int N = 35;
+    int N = 30;
     double DT = 0.005; 
     
     wl_mpc::MPCSolver solver(Q, F, R, N, DT);
