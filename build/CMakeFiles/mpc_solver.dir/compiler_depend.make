@@ -277,6 +277,7 @@ CMakeFiles/mpc_solver.dir/src/mpc_solver.cpp.o: /home/zijin/wheel_leg_control/sr
   /usr/lib/gcc/x86_64-linux-gnu/10/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/10/include/mm_malloc.h \
   /usr/lib/gcc/x86_64-linux-gnu/10/include/mmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/10/include/omp.h \
   /usr/lib/gcc/x86_64-linux-gnu/10/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/10/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/10/include/stdint.h \
@@ -868,6 +869,8 @@ CMakeFiles/mpc_solver.dir/src/mpc_solver.cpp.o: /home/zijin/wheel_leg_control/sr
 /usr/lib/gcc/x86_64-linux-gnu/10/include/xmmintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/10/include/stdint.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/10/include/omp.h:
 
 /usr/local/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:
 

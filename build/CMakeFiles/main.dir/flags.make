@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/zijin/wheel_leg_control/include -I/usr/local/include/eigen3
+CXX_INCLUDES = -I/home/zijin/wheel_leg_control/include -I/usr/local/include/eigen3 -I/home/zijin/wheel_leg_control/OpenMP::OpenMP_CXX
 
 CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17
 

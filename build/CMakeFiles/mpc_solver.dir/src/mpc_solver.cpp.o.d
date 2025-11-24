@@ -496,4 +496,5 @@ CMakeFiles/mpc_solver.dir/src/mpc_solver.cpp.o: \
  /usr/local/include/osqp/osqp_api_types.h \
  /usr/local/include/osqp/osqp_api_functions.h \
  /usr/local/include/osqp/osqp_export_define.h \
- /usr/include/c++/10/iostream
+ /usr/include/c++/10/iostream \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/omp.h

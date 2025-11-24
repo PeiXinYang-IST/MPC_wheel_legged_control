@@ -2,7 +2,7 @@
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
 #include "common.hpp"
-#include <osqp/osqp.h> // Include only the main header
+#include <osqp/osqp.h> 
 
 namespace wl_mpc {
 
@@ -13,30 +13,41 @@ public:
     ~MPCSolver();
 
     void init();
+    // LTV 系统核心：每次控制循环调用，更新模型矩阵 A, B
     void updateModel(const Eigen::MatrixXd& A, const Eigen::MatrixXd& B);
+    
     void setConstraints(double max_wheel_T, double max_hip_T);
+    
+    // 求解函数 (极速版)
     Eigen::VectorXd solve(const Eigen::VectorXd& x_curr, const Eigen::VectorXd& x_ref);
 
 private:
-    // Helper to convert Eigen to OSQP CSC Matrix
+    // 将 Eigen 矩阵转换为 OSQP CSC 格式 (首次分配内存)
     void castToCsc(const Eigen::MatrixXd& mat, OSQPCscMatrix** csc_mat);
-    void freeCsc(OSQPCscMatrix* mat); // Helper to free CSC memory
+    
+    // 原地更新 CSC 矩阵的数值 (不分配内存，用于 LTV 加速)
+    void updateCscData(const Eigen::MatrixXd& mat, OSQPCscMatrix* csc_mat);
+    
+    void freeCsc(OSQPCscMatrix* mat);
 
     Eigen::MatrixXd Q_, F_, R_;
     int N_;
     double dt_;
     Eigen::Vector2d u_min_, u_max_;
+    Eigen::VectorXd x_min_, x_max_;
 
+    // 预测模型矩阵 (预分配内存)
     Eigen::MatrixXd Ad_, Bd_;
     Eigen::MatrixXd E_, G_, H_; 
     Eigen::MatrixXd M_, C_; 
     Eigen::MatrixXd Q_bar_, R_bar_;
-
-    // OSQP v1.0 Structures
-    OSQPSettings* settings_ = nullptr;
-    OSQPSolver* solver_ = nullptr; // v1.0 的工作空间/求解器句柄
     
-    // Matrix buffers
+    // 临时缓冲区，避免栈溢出
+    Eigen::MatrixXd A_cons_dense_buffer_; 
+
+    OSQPSettings* settings_ = nullptr;
+    OSQPSolver* solver_ = nullptr; 
+    
     OSQPCscMatrix* P_csc_ = nullptr;
     OSQPCscMatrix* A_constraints_csc_ = nullptr;
     
